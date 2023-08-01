@@ -1,0 +1,173 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>eH0thJ6gaabclvA-gt-18424181-2023-07-05T16:00:02.074Z::pd.xml</types1:EntryId>
+      <types1:Name>Process1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nabillall</types1:CreatedBy>
+      <types1:CreationDate>2023-07-05T16:00:02Z</types1:CreationDate>
+      <types1:ModifiedBy>nabillall</types1:ModifiedBy>
+      <types1:ModificationDate>2023-07-05T16:52:19Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>nabillall</types1:PublishedBy>
+      <types1:PublicationDate>2023-07-05T16:52:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Process1/Process1.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Process1"
+                  name="Process1"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="temp_SessionId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_exportMeteringJobID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="temp_FileTask" type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ljpwh0a5" targetId="ljpwh0a4"/>
+               </start>
+               <service id="ljpwh0a4">
+                  <title>login_V3</title>
+                  <serviceName>AppConnection1:login_V3</serviceName>
+                  <serviceGUID>k7ww376FX4ydJTgNRDfe2C</serviceGUID>
+                  <serviceInput/>
+                  <link id="ljpwh0a6" targetId="ljpwh07a"/>
+               </service>
+               <service id="ljpwh0aj">
+                  <title>exportServiceJobLevelMeteringData_v3</title>
+                  <serviceName>AppConnection1:exportServiceJobLevelMeteringData_v3</serviceName>
+                  <serviceGUID>k7ww376FX4ydJTgNRDfe2C</serviceGUID>
+                  <serviceInput>
+                     <parameter name="startDate" source="formula">
+                        <expression language="XQuery">"2023-06-12T00:00:00Z"</expression>
+                     </parameter>
+                     <parameter name="endDate" source="formula">
+                        <expression language="XQuery">"2023-07-05T00:00:00Z"</expression>
+                     </parameter>
+                     <parameter name="meterId" source="formula">
+                        <expression language="XQuery">"a2nB20h1o0lc7k3P9xtWS8"</expression>
+                     </parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">temp.temp_SessionId</parameter>
+                  </serviceInput>
+                  <link id="ljpwh0b0" targetId="ljpwh0az"/>
+               </service>
+               <service id="ljpwh0b6">
+                  <title>exportServiceJobgetStatus_v3</title>
+                  <serviceName>AppConnection1:exportServiceJobgetStatus_v3</serviceName>
+                  <serviceGUID>k7ww376FX4ydJTgNRDfe2C</serviceGUID>
+                  <serviceInput>
+                     <parameter name="jobId" source="field" updatable="true">temp.temp_exportMeteringJobID</parameter>
+                     <parameter name="sessionId" source="field" updatable="true">temp.temp_SessionId</parameter>
+                  </serviceInput>
+                  <link id="ljpwh0bi" targetId="ljpwh0bh"/>
+               </service>
+               <assignment id="ljpwh07a">
+                  <title>Assignment to temp_SessionId</title>
+                  <operation source="field" to="temp.temp_SessionId">output.sessionId</operation>
+                  <link id="ljpwh0ak" targetId="ljpwh0aj"/>
+               </assignment>
+               <assignment id="ljpwh0az">
+                  <title>Assignment to temp_exportMeteringJobID</title>
+                  <operation source="field" to="temp.temp_exportMeteringJobID">output.jobId</operation>
+                  <link id="ljpwh0b7" targetId="ljpwh0b6"/>
+               </assignment>
+               <container id="ljpwh0bh" type="exclusive">
+                  <title>status</title>
+                  <flow id="ljpwh0bl">
+                     <service id="ljpwh0cw">
+                        <title>exportMeteringData_v3</title>
+                        <serviceName>AppConnection1:exportMeteringData_v3</serviceName>
+                        <serviceGUID>k7ww376FX4ydJTgNRDfe2C</serviceGUID>
+                        <serviceInput>
+                           <parameter name="jobId" source="field" updatable="true">temp.temp_exportMeteringJobID</parameter>
+                           <parameter name="sessionId" source="field" updatable="true">temp.temp_SessionId</parameter>
+                        </serviceInput>
+                        <link id="ljpwh0di" targetId="ljpwh0dh"/>
+                     </service>
+                     <assignment id="ljpwh0dh">
+                        <title>Assignment to temp_FileTask</title>
+                        <operation source="field" to="temp.temp_FileTask">output.file</operation>
+                     </assignment>
+                     <link id="ljpwh0bm" targetId="ljpwh0bh" type="containerLink"/>
+                  </flow>
+                  <flow id="ljpwh0bo">
+                     <wait id="ljpwh0cc">
+                        <title>Wait 20 seconds</title>
+                        <duration source="formula">
+                           <function name="duration_expression">
+                              <arg name="value">20</arg>
+                              <arg name="scale">S</arg>
+                              <arg name="businessDays"/>
+                           </function>
+                        </duration>
+                        <link id="ljpwh0cn" targetId="ljpwh0cl"/>
+                     </wait>
+                     <jumpTo id="ljpwh0cl">
+                        <link id="ljpwh0cm" targetId="ljpwh0b6"/>
+                     </jumpTo>
+                  </flow>
+                  <link id="ljpwh0bk" targetId="ljpwh0bl" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$output.status}</arg>
+                           <arg name="right">SUCCESS</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="ljpwh0bn" targetId="ljpwh0bo" type="containerLink"/>
+                  <link id="ljpwh0bj" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>81aad629-8280-4f82-95ad-4bc8306eb709</ns1:Id>
+               <ns1:Name>gdsfg</ns1:Name>
+               <ns1:CreatedBy>nabillall</ns1:CreatedBy>
+               <ns1:CreationDate>2023-07-05T16:00:31Z</ns1:CreationDate>
+               <ns1:ModifiedBy>nabillall</ns1:ModifiedBy>
+               <ns1:ModificationDate>2023-07-05T16:00:31Z</ns1:ModificationDate>
+               <ns1:Data format="json">{}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>6S50KQO9FAJbFa7TXFals0</types1:GUID>
+      <types1:DisplayName>Process1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-08-01T14:26:59.94Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

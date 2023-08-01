@@ -1,0 +1,53 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>m4gkVgglxbdypKw-gt-18471383-2023-07-05T15:54:41.197Z::conn.xml</types1:EntryId>
+      <types1:Name>AppConnection1</types1:Name>
+      <types1:ParentFlowIds>eH0thJ6gaabclvA-gt-18424181-2023-07-05T16:00:02.074Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nabillall</types1:CreatedBy>
+      <types1:CreationDate>2023-07-05T15:54:41Z</types1:CreationDate>
+      <types1:ModifiedBy>nabillall</types1:ModifiedBy>
+      <types1:ModificationDate>2023-07-05T16:01:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>nabillall</types1:PublishedBy>
+      <types1:PublicationDate>2023-07-05T16:30:16Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AppConnection1/AppConnection1.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AppConnection1"
+                     label="AppConnection1"
+                     name="AppConnection1">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="username" value="rislanna"/>
+               <attribute encrypted="false" name="password" value="Vodafone93."/>
+               <attribute encrypted="false"
+                          name="baseUrl"
+                          value="https://dm-em.informaticacloud.com"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/IDMC_APIS/IDMC_APIS_svcDef.xml"
+                               guid="0lrrW2ol8G5ltC8jgdGT8w"
+                               name="IDMC_APIS"
+                               supportsConnectionTest="false"
+                               uuid="3349ef8e-8193-4555-a660-57cf34e00a94">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>k7ww376FX4ydJTgNRDfe2C</types1:GUID>
+      <types1:DisplayName>AppConnection1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-08-01T14:26:59.24Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

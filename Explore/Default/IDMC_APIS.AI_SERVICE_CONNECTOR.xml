@@ -1,0 +1,1103 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>thzSZkL0jmu6lS0-gt-18218707-2023-07-05T13:16:41.318Z::svc.xml</types1:EntryId>
+      <types1:Name>IDMC_APIS</types1:Name>
+      <types1:ParentFlowIds>m4gkVgglxbdypKw-gt-18471383-2023-07-05T15:54:41.197Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nabillall</types1:CreatedBy>
+      <types1:CreationDate>2023-07-05T13:16:41Z</types1:CreationDate>
+      <types1:ModifiedBy>nabillall</types1:ModifiedBy>
+      <types1:ModificationDate>2023-07-05T16:30:09Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>nabillall</types1:PublishedBy>
+      <types1:PublicationDate>2023-07-05T16:30:13Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/IDMC_APIS/IDMC_APIS_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="IDMC_APIS"
+                            label=""
+                            name="IDMC_APIS"
+                            uuid="3349ef8e-8193-4555-a660-57cf34e00a94">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="username"
+                                    required="true"
+                                    testWith="rislanna"
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="password"
+                                    required="true"
+                                    testWith="Vodafone93."
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="baseUrl"
+                                    required="true"
+                                    testWith="https://dm-em.informaticacloud.com"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="login_V3"
+                       maxRedirects="100"
+                       name="login_V3"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$baseUrl}/saas/public/core/v3/login"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{"username":"{$username }","password":"{$password }"}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="sessionId"
+                            property="sessionId"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="login_V2"
+                       maxRedirects="100"
+                       name="login_V2"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$baseUrl}/ma/api/v2/user/login"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{"username":"{$username }","password":"{$password }"}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="exportServiceJobLevelMeteringData_v3"
+                       maxRedirects="100"
+                       name="exportServiceJobLevelMeteringData_v3"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="startDate"
+                                name="startDate"
+                                nogen="true"
+                                required="false"
+                                testWith="2023-06-12T00:00:00Z"
+                                type="string"/>
+                     <parameter label="endDate"
+                                name="endDate"
+                                nogen="true"
+                                required="false"
+                                testWith="2023-07-05T00:00:00Z"
+                                type="string"/>
+                     <parameter label="meterId"
+                                name="meterId"
+                                nogen="true"
+                                required="false"
+                                testWith="a2nB20h1o0lc7k3P9xtWS8"
+                                type="string"/>
+                     <parameter label="icSessionId"
+                                name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="hC8fEY4wNEdhoJ31WXdCOd"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/license/metering/ExportServiceJobLevelMeteringData"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="INFA-SESSION-ID">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>{{"startDate":"{$startDate}",
+    "endDate":"{$endDate}",
+    "meterId":"{$meterId}"
+    }}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="jobId" property="jobId" type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="exportServiceJobgetStatus_v3"
+                       maxRedirects="100"
+                       name="exportServiceJobgetStatus_v3"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="jobId"
+                                name="jobId"
+                                nogen="true"
+                                required="true"
+                                testWith="jIvROptduMwjVG5kQtOKg7"
+                                type="string"/>
+                     <parameter label="INFA-SESSION-ID"
+                                name="sessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="djcgbMlbjaBk840Af84x8D"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/license/metering/ExportMeteringData/{$jobId}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="INFA-SESSION-ID">{$sessionId}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="status" property="status" type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="exportMeteringData_v3"
+                       maxRedirects="100"
+                       name="exportMeteringData_v3"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="jobId"
+                                name="jobId"
+                                nogen="true"
+                                required="false"
+                                testWith="0MlXAAczwjodQllmQeUlKh"
+                                type="string"/>
+                     <parameter label="INFA-SESSION-ID"
+                                name="sessionId"
+                                nogen="true"
+                                required="true"
+                                testWith="djcgbMlbjaBk840Af84x8D"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/license/metering/ExportMeteringData/{$jobId}/download"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="INFA-SESSION-ID">{$sessionId}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field attachments="true" description="" name="file" type="attachment"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getMtask_v2"
+                       maxRedirects="100"
+                       name="getMtask_v2"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="icSessionId"
+                                name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="c6ujWxQxBCFgcWlqIQKh29"
+                                type="string"/>
+                     <parameter label="mttaskId"
+                                name="mttaskId"
+                                nogen="true"
+                                required="false"
+                                testWith="0100200Z000000000HGE"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://emw1.dm-em.informaticacloud.com/saas/api/v2/mttask/{$mttaskId}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="lookup_V3"
+                       maxRedirects="100"
+                       name="lookup_V3"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="icSessionId"
+                                name="icSessionId"
+                                nogen="true"
+                                required="false"
+                                testWith="5JnTaAS8fKGkRKa3edt6Mw"
+                                type="string"/>
+                     <parameter label="idobject"
+                                name="idobject"
+                                nogen="true"
+                                required="false"
+                                testWith="7vsqCQsVvqsglu2bD1ABQ1"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/lookup"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="INFA-SESSION-ID">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>{{"objects": [{{
+        "id" : "{$idobject}"
+    }}]}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root_v3">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="userInfo"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">userInfo</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="products"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">products</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="userInfo_v3">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="orgName" nullable="true" required="false" type="string"/>
+                     <field name="parentOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="groups" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">groups</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="sessionId" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="groups_v3">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="DTT" nullable="true" required="false" type="string"/>
+                     <field name="DQA" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="products_v3">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="baseApiUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="lastName" nullable="true" required="false" type="string"/>
+                     <field name="securityAnswer"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="timezone" nullable="true" required="false" type="string"/>
+                     <field name="roles" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">roles</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="sfUsername"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="title" nullable="true" required="false" type="string"/>
+                     <field name="uuid" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="int"/>
+                     <field name="orgUuid" nullable="true" required="false" type="string"/>
+                     <field name="emails" nullable="true" required="false" type="string"/>
+                     <field name="password" nullable="true" required="false" type="string"/>
+                     <field name="serverUrl" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="securityQuestion"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="firstName" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="phone" nullable="true" required="false" type="int"/>
+                     <field name="usergroups"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">usergroups</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="icSessionId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="forceChangePassword"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="spiUrl" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="roles_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="usergroups_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root_exportServiceJob">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="jobId" nullable="true" required="false" type="string"/>
+                     <field name="endDate" nullable="true" required="false" type="datetime"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="meterId" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="callbackUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="selectedOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="userId" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="startDate"
+                            nullable="true"
+                            required="false"
+                            type="datetime"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root_exportServiceJobgetStatus">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="jobId" nullable="true" required="false" type="string"/>
+                     <field name="endDate" nullable="true" required="false" type="datetime"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="meterId" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="callbackUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="selectedOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="userId" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="startDate"
+                            nullable="true"
+                            required="false"
+                            type="datetime"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="mappingId" nullable="true" required="false" type="string"/>
+                     <field name="agentId" nullable="true" required="false" type="string"/>
+                     <field name="runtimeEnvironmentId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="inOutParameters"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">inOutParameters</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="parameterFileEncoding"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="sequences" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="int"/>
+                     <field name="valid" nullable="true" required="false" type="string"/>
+                     <field name="enableCrossSchemaPushdown"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="autoTunedAppliedType"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="sessionProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">sessionProperties</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="enableParallelRun"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="connRuntimeAttrs"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="autoTunedApplied"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="schemaMode"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="paramFileConnectionId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="frsGuid" nullable="true" required="false" type="string"/>
+                     <field name="shortDescription"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="verbose" nullable="true" required="false" type="string"/>
+                     <field name="lastRunTime"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="serverlessProperties"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="paramFileType"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="parameterFileName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="schemaValidationErrorCount"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                     <field name="parameters"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">parameters</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="maxLogs" nullable="true" required="false" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="inOutParameters_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="aggregationType"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="datatype" nullable="true" required="false" type="string"/>
+                     <field name="precision" nullable="true" required="false" type="int"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="scale" nullable="true" required="false" type="int"/>
+                     <field name="id" nullable="true" required="false" type="int"/>
+                     <field name="retentionPolicy"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="initialValue" nullable="true" required="false" type="int"/>
+                     <field name="currentValue"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="sessionProperties_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="AllowTemporaryViewforPushdown"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="AllowTemporarySequenceforPushdown"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="PushdownOptimization"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="parameters_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="currentlyProcessedFileName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="naturalOrder"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="extendedObject"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">extendedObject</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="fetchMode" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="customFuncCfg"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">customFuncCfg</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="frsAsset" nullable="true" required="false" type="string"/>
+                     <field name="tgtObjectAttributes"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="handleSpecialChars"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="useExactSrcNames"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="excludeDynamicFileNameField"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="runtimeAttrs"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="newObject" nullable="true" required="false" type="string"/>
+                     <field name="isFileList"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="dynamicFileName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="int"/>
+                     <field name="tgtFieldRefs"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="newFlatFile"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="isRESTModernSource"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="bulkApiDBTarget"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="retainFieldMetadata"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="sourceConnectionId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="runtimeParameterData"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">runtimeParameterData</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="showBusinessNames"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="handleDecimalRoundOff"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="targetUpdateColumns"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="overriddenFields"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="truncateTarget"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="targetRefsV2"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="uiProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">uiProperties</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="targetObject"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="targetObjectLabel"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="targetConnectionId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="objectName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="operationType"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="objectLabel"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="text" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="extendedObject_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="advancedFilterExpression"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">objects</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="singleMode"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="sortFields"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="filters" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="object" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">object</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="objects_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="metadataUpdated"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="children" nullable="true" required="false" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="relations" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="object_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="metadataUpdated"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="children" nullable="true" required="false" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="label" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="relations" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="customFuncCfg_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="outputFields"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="int"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="inputMap" nullable="true" required="false" type="string"/>
+                     <field name="connections"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="runtimeParameterData_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="isObjectRuntimeParameter"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="connectionParameterName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="isConnectionRuntimeParameter"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="uiProperties_getMtask_v2">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="isSelectDistinct"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="isMsrcFilterParameterized"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="connectionParameterized"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="visible" nullable="true" required="false" type="string"/>
+                     <field name="isMsrcSortParameterized"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="cnxtype" nullable="true" required="false" type="string"/>
+                     <field name="paramLabel"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="objectParameterized"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="paramName" nullable="true" required="false" type="string"/>
+                     <field name="paramType-mapping"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="originalPath"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="logcnx" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="root_lookup_V3">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">objects</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="objects_lookup_V3">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="path" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>0lrrW2ol8G5ltC8jgdGT8w</types1:GUID>
+      <types1:DisplayName>IDMC_APIS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2023-08-01T14:26:59.121Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

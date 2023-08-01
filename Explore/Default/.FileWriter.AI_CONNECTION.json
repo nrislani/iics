@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "0gEQuVNORCCcIvo3Kxx3Cs",
+    "name" : "FileWriter",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "vDINciZBpDUQbgd-gt-5146507-2023-07-06T08:04:35.32Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}
