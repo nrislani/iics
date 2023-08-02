@@ -16,7 +16,7 @@
       <types1:ModificationDate>2023-07-05T16:52:19Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>nabillall</types1:PublishedBy>
-      <types1:PublicationDate>2023-07-05T16:52:21Z</types1:PublicationDate>
+      <types1:PublicationDate>2023-08-01T14:30:05Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.Process1/Process1.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -169,5 +169,5 @@
       <types1:GUID>6S50KQO9FAJbFa7TXFals0</types1:GUID>
       <types1:DisplayName>Process1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-01T14:26:59.94Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-08-02T08:17:47.677Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
