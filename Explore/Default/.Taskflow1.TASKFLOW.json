@@ -20,6 +20,26 @@
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2024-10-01T08:08:56.241Z",
-  "objectRefs" : [ ]
+  "updateTime" : "2024-10-01T08:11:10.018Z",
+  "objectRefs" : [ {
+    "id" : "9BMXm6bX5OJldt8K1X2Yyb",
+    "name" : "MappingTask2",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011C1C0Z00000000000B"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Default"
+  } ]
 }
