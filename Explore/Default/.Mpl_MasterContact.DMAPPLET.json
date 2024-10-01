@@ -1,0 +1,48 @@
+{
+  "objectInfo" : {
+    "id" : "9ynrIkeBZh7kJkKmRSN0SP",
+    "name" : "Mpl_MasterContact",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011C1C40000000000003"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapplet that will define a master Contact name",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-10-01T08:13:07.691Z",
+  "objectRefs" : [ {
+    "id" : "2qdKnCZxYYmbW3Mt3vaJmr",
+    "name" : "Cln_DerivePrefixfromFirstname",
+    "type" : "CLEANSE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "2qdKnCZxYYmbW3Mt3vaJmr"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Default"
+  } ]
+}
