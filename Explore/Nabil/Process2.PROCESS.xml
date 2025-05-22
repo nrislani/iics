@@ -4,7 +4,7 @@
       <types1:EntryId>mlkSptM9hOznKKv-gt-8170244-2025-05-22T21:04:33.204Z::pd.xml</types1:EntryId>
       <types1:Name>Process2-6</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description/>
+      <types1:Description>v6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,7 +12,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
       <types1:CreationDate>2025-05-22T21:04:33Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>nrislani@informatica.com.ips</types1:ModifiedBy>
+      <types1:ModificationDate>2025-05-22T21:32:52Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -24,7 +25,7 @@
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description/>
+            <description>v6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <notes/>
@@ -32,17 +33,17 @@
                <rest/>
             </deployment>
             <extData>
-               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
-               <nvpair name="treatEmptyStringAsNull">true</nvpair>
                <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
                <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
             </extData>
-            <flow id="x17524184-ba57-45b0-8408-acfd7bd018bf">
-               <start id="p69e9c748-ddea-45dc-8519-456110baad52">
-                  <link id="sc79d05ec-4f29-4932-b942-7a853a077b7c"
-                        targetId="end-t5a9ec2c6-5ec7-4667-939c-2476789999fd"/>
+            <flow id="y1a8fb564-0f3c-4194-bd3e-20b3b164bd14">
+               <start id="gdd3e0726-e962-4c12-9b53-42bf8df2904b">
+                  <link id="kd965b24e-2526-4671-849b-1b7dd6a42de3"
+                        targetId="a18jBD5vx39oBijGPF1ogdCn-end-t5a9ec2c6-5ec7-4667-939c-2476789999fd"/>
                </start>
-               <end id="end-t5a9ec2c6-5ec7-4667-939c-2476789999fd">
+               <end id="a18jBD5vx39oBijGPF1ogdCn-end-t5a9ec2c6-5ec7-4667-939c-2476789999fd">
                   <title>End</title>
                </end>
             </flow>
@@ -51,5 +52,5 @@
       <types1:GUID>8jBD5vx39oBijGPF1ogdCn</types1:GUID>
       <types1:DisplayName>Process2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-05-22T21:21:15.499Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-05-22T21:33:04.619Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
