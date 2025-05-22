@@ -1,0 +1,55 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ssjqluQgabcjk91-gt-3073165-2025-05-22T22:00:33.05Z::pd.xml</types1:EntryId>
+      <types1:Name>Process_Nabil</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
+      <types1:CreationDate>2025-05-22T22:00:33Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="4Gu0zoq7ODNewsKiBZqaAx"
+                  displayName="Process_Nabil"
+                  name="Process_Nabil"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="n5b6056a3-0aef-4176-b1e4-fd2d04bc0b8b">
+               <start id="h8f241913-7988-4685-9407-6c165aa9742c">
+                  <link id="wfab7f743-5d6d-4aec-8b0d-e3c08614a5c9"
+                        targetId="end-c8b9fc281-4279-4d3b-aadc-edc1d6e5206d"/>
+               </start>
+               <end id="end-c8b9fc281-4279-4d3b-aadc-edc1d6e5206d">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4Gu0zoq7ODNewsKiBZqaAx</types1:GUID>
+      <types1:DisplayName>Process_Nabil</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-22T22:00:43.069Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
