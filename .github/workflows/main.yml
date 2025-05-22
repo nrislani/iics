@@ -1,0 +1,24 @@
+name: Trigger DEV2 Deployment
+on:
+  push:
+    branches:
+      - 'dev1'
+    paths-ignore:
+      - '.github/**'
+  workflow_dispatch:
+    
+env:
+  DISPATCH_URL: "https://api.github.com/repos/nrislani/IICS_CICD_PIPELINE/actions/workflows/IICS_DEPLOYMENT.yml/dispatches"
+  HEADERS: "Authorization: Bearer ${{ secrets.CICD_TRIGGER_SECRET}}" 
+  BODY: '{ "ref":"main", "inputs":{"committed_sha":"${{ github.sha }}"}}'
+
+jobs:
+  trigger_dev2_deployment:
+    name: Trigger DEV2 Deployment
+    environment:
+      name: dev1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger DEV2 pipeline
+        if: startsWith(github.event.head_commit.message, 'deploy')
+        run: curl -X POST ${{ env.DISPATCH_URL }} -H '${{ env.HEADERS }}' -d '${{ env.BODY }}'
