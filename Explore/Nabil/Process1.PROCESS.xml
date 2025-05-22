@@ -1,0 +1,72 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>1QLnzYLnzYLnzYL-gt-8134467-2025-05-22T20:07:20.846Z::pd.xml</types1:EntryId>
+      <types1:Name>Process1-28</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
+      <types1:CreationDate>2025-05-22T20:07:21Z</types1:CreationDate>
+      <types1:ModifiedBy>nrislani@informatica.com.ips</types1:ModifiedBy>
+      <types1:ModificationDate>2025-05-22T20:07:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>nrislani@informatica.com.ips</types1:PublishedBy>
+      <types1:PublicationDate>2025-05-22T20:07:58Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Process1-28/Process1-28.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="a2EOIoLWQJidGiJAj7VkUb"
+                  displayName="Process1"
+                  name="Process1-28"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="untitled1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="i71f871e3-6afb-42b5-b204-709d8804fbc3">
+               <start id="wc8cad868-f70c-4ab3-989d-0fa4c318feb7">
+                  <link id="m0765f9b7-e56e-4c42-80af-a8a879cfe599"
+                        targetId="Assignmentde6e9ecf-f3b2-4727-baaa-e3dd1487fb10"/>
+               </start>
+               <assignment id="Assignmentde6e9ecf-f3b2-4727-baaa-e3dd1487fb10">
+                  <title>Assignment to untitled1</title>
+                  <operation source="constant" to="temp.untitled1">a</operation>
+                  <link id="ba028e409-ce92-4a96-ab27-739a0feb85b8"
+                        targetId="end-e4b6ab21c-5e85-438d-8c73-5d45ff618446"/>
+               </assignment>
+               <end id="end-e4b6ab21c-5e85-438d-8c73-5d45ff618446">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>a2EOIoLWQJidGiJAj7VkUb</types1:GUID>
+      <types1:DisplayName>Process1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-22T21:58:20.119Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
