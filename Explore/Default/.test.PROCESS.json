@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "4L0T9By4DmGkOkQMf9e2as",
+    "name" : "test",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "EFpGY2KsJlv58pI-gt-3871619-2025-05-22T20:12:27.495Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-05-22T20:12:39.469Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
