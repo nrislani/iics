@@ -4,7 +4,7 @@
       <types1:EntryId>ssjqluQgabcjk91-gt-3073165-2025-05-22T22:00:33.05Z::pd.xml</types1:EntryId>
       <types1:Name>Process_Nabil</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>v1 livrée en uat</types1:Description>
+      <types1:Description>v2</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,7 +13,7 @@
       <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
       <types1:CreationDate>2025-05-22T22:00:33Z</types1:CreationDate>
       <types1:ModifiedBy>nrislani@informatica.com.ips</types1:ModifiedBy>
-      <types1:ModificationDate>2025-05-22T22:01:29Z</types1:ModificationDate>
+      <types1:ModificationDate>2025-05-23T08:13:05Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -25,7 +25,7 @@
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>v1 livrée en uat</description>
+            <description>v2</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <notes/>
@@ -33,14 +33,16 @@
                <rest/>
             </deployment>
             <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
                <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
                <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
-               <nvpair name="treatEmptyStringAsNull">true</nvpair>
                <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
             </extData>
-            <flow id="jed2135e1-6a07-4349-b5d6-a0072a944813">
-               <start id="mf2a0b48d-a394-42b2-8294-a3c9304076bd">
-                  <link id="q6cd9b056-f053-4fc1-8f20-d15b86d648ed"
+            <flow id="o5c79e9a1-1e48-41fd-ab39-a50d676cf9db">
+               <start id="rb6466249-07ce-4935-9acd-75555a406690">
+                  <link id="t390cff2a-c5f4-4d0a-a729-c27f494b33a3"
                         targetId="a14Gu0zoq7ODNewsKiBZqaAx-end-c8b9fc281-4279-4d3b-aadc-edc1d6e5206d"/>
                </start>
                <end id="a14Gu0zoq7ODNewsKiBZqaAx-end-c8b9fc281-4279-4d3b-aadc-edc1d6e5206d">
@@ -52,5 +54,5 @@
       <types1:GUID>4Gu0zoq7ODNewsKiBZqaAx</types1:GUID>
       <types1:DisplayName>Process_Nabil</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-05-22T22:03:22.133Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-05-23T08:13:31.796Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

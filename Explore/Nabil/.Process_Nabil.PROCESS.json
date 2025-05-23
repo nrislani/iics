@@ -13,14 +13,14 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "v1 livrée en uat",
+        "description" : "v2",
         "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2025-05-22T22:03:22.522Z",
+  "updateTime" : "2025-05-23T08:13:32.107Z",
   "objectRefs" : [ ],
   "readableFileExtension" : null,
   "readableFilePresent" : false
