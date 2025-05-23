@@ -1,0 +1,55 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>oSeE1KoJBUhtyco-gt-8693982-2025-05-23T08:21:00.239Z::pd.xml</types1:EntryId>
+      <types1:Name>Process_icdc</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
+      <types1:CreationDate>2025-05-23T08:21:00Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="fggIdChLtCAhcjc4dyq6AW"
+                  displayName="Process_icdc"
+                  name="Process_icdc"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="nea50f132-005e-43b1-97af-fa89d62b9f81">
+               <start id="o620d76b0-426a-4f56-9313-f7064cd1d2e6">
+                  <link id="n9cbe24dd-48d4-425d-8489-8543c040c97b"
+                        targetId="end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc"/>
+               </start>
+               <end id="end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>fggIdChLtCAhcjc4dyq6AW</types1:GUID>
+      <types1:DisplayName>Process_icdc</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-05-23T08:21:12.742Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
