@@ -12,7 +12,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
       <types1:CreationDate>2025-05-23T08:21:00Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>nrislani@informatica.com.ips</types1:ModifiedBy>
+      <types1:ModificationDate>2025-05-23T08:32:31Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -37,12 +38,18 @@
                <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
                <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
             </extData>
-            <flow id="nea50f132-005e-43b1-97af-fa89d62b9f81">
-               <start id="o620d76b0-426a-4f56-9313-f7064cd1d2e6">
-                  <link id="n9cbe24dd-48d4-425d-8489-8543c040c97b"
-                        targetId="end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc"/>
+            <flow id="sa29baa23-8129-4b82-b3cc-03e3eec466c7">
+               <start id="cbe28d609-8712-4609-91a1-71a4af8eec29">
+                  <link id="p91baa100-f4b0-4f23-8dd7-36fa60d4c60b"
+                        targetId="Assignment142cde3e-1920-4bfb-979c-009853bcf5a0"/>
                </start>
-               <end id="end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc">
+               <assignment id="Assignment142cde3e-1920-4bfb-979c-009853bcf5a0">
+                  <title>Assignment to temp_nabil</title>
+                  <operation source="constant" to="temp.temp_nabil">nabil</operation>
+                  <link id="g96b61870-c609-430a-be5c-35584c51eb73"
+                        targetId="a1fggIdChLtCAhcjc4dyq6AW-end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc"/>
+               </assignment>
+               <end id="a1fggIdChLtCAhcjc4dyq6AW-end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc">
                   <title>End</title>
                </end>
             </flow>
@@ -51,5 +58,5 @@
       <types1:GUID>fggIdChLtCAhcjc4dyq6AW</types1:GUID>
       <types1:DisplayName>Process_icdc</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-05-23T08:25:54.293Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-05-23T08:32:43.597Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
