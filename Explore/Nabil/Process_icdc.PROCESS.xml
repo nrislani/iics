@@ -12,7 +12,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>nrislani@informatica.com.ips</types1:CreatedBy>
       <types1:CreationDate>2025-05-23T08:21:00Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>nrislani@informatica.com.ips</types1:ModifiedBy>
+      <types1:ModificationDate>2025-05-23T08:25:17Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -27,22 +28,35 @@
             <description/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="temp_nabil" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
             <notes/>
             <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
                <rest/>
             </deployment>
             <extData>
-               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
-               <nvpair name="treatEmptyStringAsNull">true</nvpair>
                <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
                <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
             </extData>
-            <flow id="nea50f132-005e-43b1-97af-fa89d62b9f81">
-               <start id="o620d76b0-426a-4f56-9313-f7064cd1d2e6">
-                  <link id="n9cbe24dd-48d4-425d-8489-8543c040c97b"
-                        targetId="end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc"/>
+            <flow id="na78da04b-32a4-42b6-ae3f-2116997368c1">
+               <start id="n3f1eacf4-b237-43b4-b935-a0c4b71ec55a">
+                  <link id="m8162f4a8-7c43-41cb-b9af-a47257936a86"
+                        targetId="Assignment7474dbec-e0af-48cd-949b-7eae41262403"/>
                </start>
-               <end id="end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc">
+               <assignment id="Assignment7474dbec-e0af-48cd-949b-7eae41262403">
+                  <title>Assignment to temp_nabil</title>
+                  <operation source="constant" to="temp.temp_nabil">nabil</operation>
+                  <link id="q4f9b43a1-4753-4667-be58-69ee16229bc4"
+                        targetId="a1fggIdChLtCAhcjc4dyq6AW-end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc"/>
+               </assignment>
+               <end id="a1fggIdChLtCAhcjc4dyq6AW-end-n51ee2d0e-1edf-4714-9014-8c06dca2bcbc">
                   <title>End</title>
                </end>
             </flow>
@@ -51,5 +65,5 @@
       <types1:GUID>fggIdChLtCAhcjc4dyq6AW</types1:GUID>
       <types1:DisplayName>Process_icdc</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-05-23T08:21:12.742Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-05-23T08:25:39.153Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
