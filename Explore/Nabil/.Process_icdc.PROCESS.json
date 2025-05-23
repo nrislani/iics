@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "fggIdChLtCAhcjc4dyq6AW",
+    "name" : "Process_icdc",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "oSeE1KoJBUhtyco-gt-8693982-2025-05-23T08:21:00.239Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-05-23T08:21:13.075Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
