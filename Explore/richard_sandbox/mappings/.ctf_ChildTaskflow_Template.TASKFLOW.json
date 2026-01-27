@@ -1,0 +1,107 @@
+{
+  "objectInfo" : {
+    "id" : "1txY9CWXgnGdiIKZ5OFfe2",
+    "name" : "ctf_ChildTaskflow_Template",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xGomUhGdwOLIFvu-gt-10048919-2026-01-27T13:26:11.381Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2026-01-27T13:29:00.022Z",
+  "objectRefs" : [ {
+    "id" : "6u2BmRtrPtvggiVdsVno2U",
+    "name" : "mt_AbortTaskflow",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR0Z000000000003"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/richard_sandbox/mappings"
+  }, {
+    "id" : "9PqNR58QRsHhjxGNsxqdgk",
+    "name" : "mt_ff_out_customer",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR0Z000000000005"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/richard_sandbox/mappings"
+  }, {
+    "id" : "8H39MZC5hXMkQR4lYO6Tsb",
+    "name" : "mt_Audit_TaskLogStart",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR0Z000000000004"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/richard_sandbox/mappings"
+  }, {
+    "id" : "cFhIUHGQEIDb9O9491CpqN",
+    "name" : "IPS CLOUD LAB AZURE WINDOWS SECURE AGENT GROUP",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100VQ2500000000005N"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Shared Environment owned by IPS Environment Council\nSotha Ith - sith@informatica.com\nMichael Sabotka - msabotka@Informatica.com\nBurry Rushton - brushton@informatica.com\nMoses Gone - mgone@informatica.com\nRichard Hignell - rhignell@Informatica.com\nShaun Anderson - shanderson@informatica.com",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

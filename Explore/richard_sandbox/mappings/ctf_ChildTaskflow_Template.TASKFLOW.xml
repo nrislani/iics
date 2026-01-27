@@ -1,0 +1,417 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>xGomUhGdwOLIFvu-gt-10048919-2026-01-27T13:26:11.381Z::tf.xml</types1:EntryId>
+      <types1:Name>ctf_ChildTaskflow_Template</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>france_admin</types1:CreatedBy>
+      <types1:CreationDate>2026-01-27T13:26:11Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="ctf_ChildTaskflow_Template"
+                   name="ctf_ChildTaskflow_Template"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="p_Job_ID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="p_Suspended" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="Audit_StartTask" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:mt-Audit-TaskLogStart</option>
+                  </options>
+               </field>
+               <field description="" name="dt_MainTask" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-ff-out-customer</option>
+                  </options>
+               </field>
+               <field description="" name="Audit_EndTask" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:INFA-commandTask</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                  </options>
+               </field>
+               <field description="" name="dt_AbortTaskflow" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">true</option>
+                     <option name="referenceTo">$po:mt-AbortTaskflow</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="l2pwtvkr" targetId="l2pwtvkw"/>
+               </start>
+               <eventContainer id="l2pwtvkw">
+                  <service id="l2pwtvkq">
+                     <title>Audit_StartTask</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_Audit_TaskLogStart</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">8H39MZC5hXMkQR4lYO6Tsb</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-Audit-TaskLogStart">temp.Audit_StartTask</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Audit_StartTask/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Audit_StartTask/output/FirstErrorCode">First Error Code</operation>
+                     </serviceOutput>
+                  </service>
+                  <flow id="l2pywvbo">
+                     <container id="l2pywvh9" type="exclusive">
+                        <title>Run or Skip</title>
+                        <flow id="l2pywvhc">
+                           <eventContainer id="l2pywvik">
+                              <service id="l2pywvic">
+                                 <title>dt_MainTask</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">mt_ff_out_customer</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">9PqNR58QRsHhjxGNsxqdgk</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="mt-ff-out-customer">temp.dt_MainTask</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.dt_MainTask/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Task_Id">Task Id</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Task_Status">Task Status</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/Error_Message">Error Message</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field" to="temp.dt_MainTask/output/FirstErrorCode">First Error Code</operation>
+                                 </serviceOutput>
+                              </service>
+                              <link id="l2pywviv" targetId="l2pywvjb"/>
+                              <events>
+                                 <catch faultField="temp.dt_MainTask/fault"
+                                        id="l2pywvct"
+                                        interrupting="true"
+                                        name="error"/>
+                                 <catch faultField="temp.dt_MainTask/fault"
+                                        id="l2pywvcu"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <eventContainer id="l2pywvjb">
+                              <service id="l2pywviu">
+                                 <title>Audit_EndTask</title>
+                                 <serviceName>ICSExecuteCommandTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Task Name" source="constant">Audit_EndTask</parameter>
+                                    <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                                    <parameter name="Runtime Environment" source="constant">0100VQ2500000000005N:IPS CLOUD LAB AZURE WINDOWS SECURE AGENT GROUP</parameter>
+                                    <parameter name="Script Name" source="constant">C:\ETL\Common\Scripts\richard\IICS_AuditLogging-v2.bat</parameter>
+                                    <parameter name="Input Arguments" source="formula">
+                                       <expression language="XQuery">fn:concat('"',$input.p_Job_ID ,'"')
+
+</expression>
+                                    </parameter>
+                                    <parameter name="Work Directory" source="constant"/>
+                                    <parameter name="RuntimeEnvGUID" source="constant">cFhIUHGQEIDb9O9491CpqN</parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.Audit_EndTask/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.Audit_EndTask/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.Audit_EndTask/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.Audit_EndTask/output/Exit_Code">Exit Code</operation>
+                                    <operation source="field" to="temp.Audit_EndTask/output/Execution_Status">Execution Status</operation>
+                                    <operation source="field" to="temp.Audit_EndTask/output/Std_Error">Std Error</operation>
+                                 </serviceOutput>
+                              </service>
+                              <link id="l2pywvjv" targetId="l2pywvjk"/>
+                              <events>
+                                 <catch faultField="temp.Audit_EndTask/fault"
+                                        id="l2pywvdf"
+                                        interrupting="true"
+                                        name="error"/>
+                              </events>
+                           </eventContainer>
+                           <container id="l2pywvjk" type="exclusive">
+                              <title>Retry or Fail</title>
+                              <flow id="l2pywvjl">
+                                 <jumpTo id="l2pywvlx">
+                                    <link id="l2pywvly" targetId="l2pwtvkw"/>
+                                 </jumpTo>
+                              </flow>
+                              <flow id="l2pywvjm">
+                                 <eventContainer id="l2pywvkp">
+                                    <service id="l2pywvke">
+                                       <title>dt_AbortTaskflow</title>
+                                       <serviceName>ICSExecuteDataTask</serviceName>
+                                       <serviceGUID/>
+                                       <serviceInput>
+                                          <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                          <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                          <parameter name="Task Name" source="constant" updatable="true">mt_AbortTaskflow</parameter>
+                                          <parameter name="GUID" source="constant" updatable="true">6u2BmRtrPtvggiVdsVno2U</parameter>
+                                          <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                          <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                                          <parameter name="taskField" source="nested">
+                                             <operation source="field" to="mt-AbortTaskflow">temp.dt_AbortTaskflow</operation>
+                                          </parameter>
+                                       </serviceInput>
+                                       <serviceOutput>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Object_Name">Object Name</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Run_Id">Run Id</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Log_Id">Log Id</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Task_Id">Task Id</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Task_Status">Task Status</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Success_Source_Rows">Success Source Rows</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Success_Target_Rows">Success Target Rows</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Start_Time">Start Time</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/End_Time">End Time</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/Error_Message">Error Message</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/TotalTransErrors">Total Transformation Errors</operation>
+                                          <operation source="field" to="temp.dt_AbortTaskflow/output/FirstErrorCode">First Error Code</operation>
+                                       </serviceOutput>
+                                    </service>
+                                    <events>
+                                       <catch faultField="temp.dt_AbortTaskflow/fault"
+                                              id="l2pywvkn"
+                                              interrupting="true"
+                                              name="error"/>
+                                       <catch faultField="temp.dt_AbortTaskflow/fault"
+                                              id="l2pywvko"
+                                              interrupting="true"
+                                              name="warning"/>
+                                    </events>
+                                 </eventContainer>
+                                 <link id="l2pywvjt" targetId="l2pywvjk" type="containerLink"/>
+                              </flow>
+                              <flow id="l2pywvjn">
+                                 <link id="l2pywvju" targetId="l2pywvjk" type="containerLink"/>
+                              </flow>
+                              <link id="l2pywvjp" targetId="l2pywvjl" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="contains">
+                                       <arg name="left">{$temp.Audit_EndTask[1]/output[1]/Std_Error}</arg>
+                                       <arg name="right">1</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="l2pywvjq" targetId="l2pywvjm" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="contains">
+                                       <arg name="left">{$temp.Audit_EndTask[1]/output[1]/Std_Error}</arg>
+                                       <arg name="right">2</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="l2pywvjr" targetId="l2pywvjn" type="containerLink"/>
+                           </container>
+                           <link id="l2pywvhd" targetId="l2pywvh9" type="containerLink"/>
+                        </flow>
+                        <flow id="l2pywvhf">
+                           <link id="l2pywvhg" targetId="l2pywvh9" type="containerLink"/>
+                        </flow>
+                        <link id="l2pywvhb" targetId="l2pywvhc" type="containerLink">
+                           <condition source="formula">
+                              <function name="greater-or-equals">
+                                 <arg name="left">{$temp.Audit_StartTask[1]/output[1]/Success_Target_Rows}</arg>
+                                 <arg name="right">{1}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="l2pywvhe" targetId="l2pywvhf" type="containerLink"/>
+                     </container>
+                     <link id="l2pywvbp" targetId="l2pwtvkw" type="containerLink"/>
+                  </flow>
+                  <flow id="l2pywvbr">
+                     <link id="l2pywvbs" targetId="l2pwtvkw" type="containerLink"/>
+                  </flow>
+                  <link id="l2pywvbn" targetId="l2pywvbo" type="containerLink"/>
+                  <link id="l2pwtvks" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.Audit_StartTask/fault"
+                            id="l2pwtvku"
+                            interrupting="true"
+                            name="error">
+                        <link id="l2pywvbq" targetId="l2pywvbr" type="containerLink"/>
+                     </catch>
+                     <catch faultField="temp.Audit_StartTask/fault"
+                            id="l2pwtvkv"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-Audit-TaskLogStart"
+                              isByCopy="true"
+                              name="mt-Audit-TaskLogStart">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-ff-out-customer"
+                              isByCopy="true"
+                              name="mt-ff-out-customer">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="INFA-commandTask"
+                              isByCopy="true"
+                              name="INFA-commandTask">
+                  <description>This process object represents a taskflow specific command task output field details.</description>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-AbortTaskflow"
+                              isByCopy="true"
+                              name="mt-AbortTaskflow">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>1txY9CWXgnGdiIKZ5OFfe2</types1:GUID>
+      <types1:DisplayName>ctf_ChildTaskflow_Template</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2026-01-27T13:28:59.896Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
