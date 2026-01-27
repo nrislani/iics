@@ -1,0 +1,413 @@
+{
+  "name" : "mt_AbortTaskflow",
+  "runtimeEnvironmentId" : "@cFhIUHGQEIDb9O9491CpqN",
+  "runtimeEnvironmentName" : "IPS CLOUD LAB AZURE WINDOWS SECURE AGENT GROUP",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$src_Dummy$",
+      "type" : "SOURCE",
+      "label" : "src_Dummy",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "originalPath" : "src_Dummy"
+      },
+      "sourceConnectionId" : "@0MUy662xn9rloMMBKO38ma",
+      "connectionName" : "richard_SQL",
+      "sourceObject" : "DUMMY_src_Dummy",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "customQuery" : "select 'dummy' as Dummy",
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "DUMMY_src_Dummy",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$src_Task_Logs$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "src_Task_Logs",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "isAdvFilterPartialParam" : "true",
+        "originalPath" : "src_Task_Logs"
+      },
+      "sourceConnectionId" : "@0MUy662xn9rloMMBKO38ma",
+      "connectionName" : "richard_SQL",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "TASK_LOGS",
+          "label" : "TASK_LOGS",
+          "metadataUpdated" : false
+        },
+        "advancedFilterExpression" : "\"TASK_LOGS\".\"Job_ID\" = $p_Job_ID$ and TASK_LOGS.Task_Status = 'Failed'",
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "TASK_LOGS",
+            "label" : "TASK_LOGS",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$src_vw_Job_Log_Status$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "src_vw_Job_Log_Status",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "originalPath" : "src_vw_Job_Log_Status"
+      },
+      "sourceConnectionId" : "@0MUy662xn9rloMMBKO38ma",
+      "connectionName" : "richard_SQL",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "vw_JOB_LOG_STATUS",
+          "label" : "vw_JOB_LOG_STATUS",
+          "metadataUpdated" : false
+        },
+        "advancedFilterExpression" : "vw_JOB_LOG_STATUS.JOB_STATUS = 'Running'",
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "vw_JOB_LOG_STATUS",
+            "label" : "vw_JOB_LOG_STATUS",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$tgt_Job_Logs_dummy$",
+      "type" : "TARGET",
+      "label" : "tgt_Job_Logs_dummy",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "tgt_Job_Logs_dummy"
+      },
+      "targetConnectionId" : "@7z5ZzAxoT6cd2R55O58LIL",
+      "connectionName" : "richard_ff",
+      "targetObject" : "abort.csv",
+      "targetObjectLabel" : "abort.csv",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "newObjectName" : "abort.csv",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "tgtFFAttrs" : {
+        "delimiter" : ",",
+        "textQualifier" : "\"",
+        "headerLineNo" : 1,
+        "rowDelimiter" : 0,
+        "consecutiveDelimiter" : false,
+        "multiDelimitersAsAnd" : true
+      },
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "abort.csv",
+      "objectLabel" : "abort.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$tgt_Job_Logs_ins$",
+      "type" : "TARGET",
+      "label" : "tgt_Job_Logs_ins",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "defaultTargetUpdateColumns" : "Job_Log_ID",
+        "supportApplyDDLChanges" : "false",
+        "originalPath" : "tgt_Job_Logs_ins"
+      },
+      "targetConnectionId" : "@0MUy662xn9rloMMBKO38ma",
+      "connectionName" : "richard_SQL",
+      "targetObject" : "JOB_LOGS",
+      "targetObjectLabel" : "JOB_LOGS",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Update",
+      "customFuncCfg" : { },
+      "targetUpdateColumns" : [
+        "Job_Log_ID"
+      ],
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "JOB_LOGS",
+      "objectLabel" : "JOB_LOGS",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$lkp_Root_Parent_ID$",
+      "type" : "LOOKUP",
+      "label" : "lkp_Root_Parent_ID",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isCachedLookup" : "true",
+        "multipleMatchPolicy" : "Use Any Value",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "flags" : "SUPPORTS_MULTI_SCHEMA",
+        "originalPath" : "lkp_Root_Parent_ID"
+      },
+      "lookupConnectionId" : "@0MUy662xn9rloMMBKO38ma",
+      "connectionName" : "richard_SQL",
+      "lookupObject" : "vw_JOB_LOG_STATUS",
+      "lookupObjectLabel" : "vw_JOB_LOG_STATUS",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "runtimeAttrs" : {
+        "Lookup Index Cache Size" : "AUTO",
+        "Optional" : "true",
+        "Lookup cache persistent" : "false",
+        "Lookup source is static" : "false",
+        "Re-cache from lookup source" : "false",
+        "Insert Else Update" : "false",
+        "Lookup caching enabled" : "true",
+        "Lookup Data Cache Size" : "AUTO",
+        "Tracing Level" : "Normal",
+        "Subsecond Precision" : "6",
+        "Lookup cache directory name" : "$PMCacheDir",
+        "Output Old Value On Update" : "false",
+        "Dynamic Lookup Cache" : "false",
+        "Pre-build lookup cache" : "AUTO",
+        "Synchronize dynamic cache" : "false"
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "vw_JOB_LOG_STATUS",
+      "objectLabel" : "vw_JOB_LOG_STATUS",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    },
+    {
+      "name" : "$p_Job_ID$",
+      "type" : "STRING",
+      "text" : "1",
+      "label" : "p_Job_ID",
+      "uiProperties" : {
+        "paramName" : "p_Job_ID",
+        "paramType-mapping" : "String",
+        "originalPath" : "src_Task_Logs"
+      },
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : true,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "unspecified" : false,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "mappingId" : "@1VPAxiCBO3ihIDS53tKhe2",
+  "mappingTemplateName" : "m_AbortTaskflow",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Allow Temporary Sequence for Pushdown",
+      "value" : "NO"
+    },
+    {
+      "name" : "Allow Temporary View for Pushdown",
+      "value" : "NO"
+    },
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Run Only In Pushdown Mode",
+      "value" : "NO"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : true,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "specialCharacterSupport" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2026-01-27 05:29:58 PST"
+}

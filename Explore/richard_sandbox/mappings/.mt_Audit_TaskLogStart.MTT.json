@@ -1,0 +1,93 @@
+{
+  "objectInfo" : {
+    "id" : "8H39MZC5hXMkQR4lYO6Tsb",
+    "name" : "mt_Audit_TaskLogStart",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR0Z000000000004"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2026-01-27T13:29:59.265Z",
+  "objectRefs" : [ {
+    "id" : "0MUy662xn9rloMMBKO38ma",
+    "name" : "richard_SQL",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR0B00000000000C"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "cFhIUHGQEIDb9O9491CpqN",
+    "name" : "IPS CLOUD LAB AZURE WINDOWS SECURE AGENT GROUP",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0100VQ2500000000005N"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Shared Environment owned by IPS Environment Council\nSotha Ith - sith@informatica.com\nMichael Sabotka - msabotka@Informatica.com\nBurry Rushton - brushton@informatica.com\nMoses Gone - mgone@informatica.com\nRichard Hignell - rhignell@Informatica.com\nShaun Anderson - shanderson@informatica.com",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "b5RIE12uhSSfae5K0vKyCm",
+    "name" : "m_AuditTaskLogStart",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR17000000000007"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/richard_sandbox/mappings"
+  } ],
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
+}

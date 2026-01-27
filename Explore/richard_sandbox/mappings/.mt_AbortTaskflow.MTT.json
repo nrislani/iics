@@ -1,27 +1,5 @@
 {
   "objectInfo" : {
-    "id" : "1txY9CWXgnGdiIKZ5OFfe2",
-    "name" : "ctf_ChildTaskflow_Template",
-    "type" : "TASKFLOW",
-    "metadata" : {
-      "modelVersion" : {
-        "major" : 1,
-        "minor" : 0
-      },
-      "repoInfo" : {
-        "repoHandle" : "xGomUhGdwOLIFvu-gt-10048919-2026-01-27T13:26:11.381Z::tf.xml"
-      },
-      "contextAttributes" : null,
-      "additionalInfo" : {
-        "description" : "",
-        "contentType" : "application/json; charset=utf-8",
-        "documentState" : "VALID"
-      }
-    }
-  },
-  "dataFileExtension" : "xml",
-  "updateTime" : "2026-01-27T13:29:59.263Z",
-  "objectRefs" : [ {
     "id" : "6u2BmRtrPtvggiVdsVno2U",
     "name" : "mt_AbortTaskflow",
     "type" : "MTT",
@@ -42,42 +20,61 @@
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
-    },
-    "path" : "/Explore/richard_sandbox/mappings"
-  }, {
-    "id" : "9PqNR58QRsHhjxGNsxqdgk",
-    "name" : "mt_ff_out_customer",
-    "type" : "MTT",
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2026-01-27T13:29:59.262Z",
+  "objectRefs" : [ {
+    "id" : "7z5ZzAxoT6cd2R55O58LIL",
+    "name" : "richard_ff",
+    "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
         "major" : 0,
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011FYR0Z000000000005"
+        "repoHandle" : "011FYR0B00000000000B"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "",
+        "description" : null,
         "contentType" : "JSON",
-        "documentState" : "VALID"
+        "documentState" : "COMPLETE"
       }
     },
-    "path" : "/Explore/richard_sandbox/mappings"
+    "path" : "/SYS"
   }, {
-    "id" : "8H39MZC5hXMkQR4lYO6Tsb",
-    "name" : "mt_Audit_TaskLogStart",
-    "type" : "MTT",
+    "id" : "0MUy662xn9rloMMBKO38ma",
+    "name" : "richard_SQL",
+    "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
         "major" : 0,
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "011FYR0Z000000000004"
+        "repoHandle" : "011FYR0B00000000000C"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "1VPAxiCBO3ihIDS53tKhe2",
+    "name" : "m_AbortTaskflow",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011FYR17000000000005"
       },
       "contextAttributes" : [ {
         "name" : "id",
@@ -111,6 +108,6 @@
     },
     "path" : "/SYS"
   } ],
-  "readableFileExtension" : null,
-  "readableFilePresent" : false
+  "readableFileExtension" : "json",
+  "readableFilePresent" : true
 }

@@ -1,0 +1,2332 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_AuditTaskLogStart",
+    "specialCharacterSupport" : "false",
+    "links" : [
+      {
+        "link" : "src_Jobs -> exp_Set_Values"
+      },
+      {
+        "link" : "Filter -> tgt_Task_Logs"
+      },
+      {
+        "link" : "exp_Set_Values -> Filter"
+      }
+    ],
+    "parameters" : [
+      {
+        "input" : "true",
+        "output" : "false",
+        "precision" : 0,
+        "scale" : 0,
+        "allowRuntimeOverride" : "false",
+        "expressionVariable" : "false",
+        "name" : "p_Job_ID"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2022-04-14T11:29:12.242Z",
+        "name" : "src_Jobs",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Job_ID"
+            },
+            "name" : "Job_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Name"
+            },
+            "name" : "Job_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Parent_Job_ID"
+            },
+            "name" : "Parent_Job_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Mapping_Task_Name"
+            },
+            "name" : "Mapping_Task_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Max_Retries"
+            },
+            "name" : "Max_Retries",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Wait_Time"
+            },
+            "name" : "Wait_Time",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@0MUy662xn9rloMMBKO38ma",
+          "connectionName" : "richard_SQL",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "JOBS",
+            "label" : "JOBS",
+            "objectName" : "JOBS",
+            "path" : "JOBS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Job_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_ID",
+                "nativeName" : "Job_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOBS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Name",
+                "nativeName" : "Job_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOBS"
+                  }
+                ]
+              },
+              {
+                "name" : "Parent_Job_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent_Job_ID",
+                "nativeName" : "Parent_Job_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOBS"
+                  }
+                ]
+              },
+              {
+                "name" : "Mapping_Task_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mapping_Task_Name",
+                "nativeName" : "Mapping_Task_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOBS"
+                  }
+                ]
+              },
+              {
+                "name" : "Max_Retries",
+                "fieldType" : "CONNECTOR",
+                "label" : "Max_Retries",
+                "nativeName" : "Max_Retries",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOBS"
+                  }
+                ]
+              },
+              {
+                "name" : "Wait_Time",
+                "fieldType" : "CONNECTOR",
+                "label" : "Wait_Time",
+                "nativeName" : "Wait_Time",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOBS"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false",
+            "advancedFilterCondition" : "JOBS.Job_ID = $p_Job_ID$"
+          }
+        }
+      },
+      {
+        "createTime" : "2022-04-14T11:29:12.246Z",
+        "name" : "tgt_Task_Logs",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "targetFieldsOrdered" : "false",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Task_Log_ID"
+            },
+            "name" : "Task_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_ID"
+            },
+            "name" : "Job_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Log_ID"
+            },
+            "name" : "Job_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Name"
+            },
+            "name" : "Job_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Mapping_Task_Name"
+            },
+            "name" : "Mapping_Task_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Start"
+            },
+            "name" : "Task_Start",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_End"
+            },
+            "name" : "Task_End",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Src_Rows_Success"
+            },
+            "name" : "Task_Src_Rows_Success",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Tgt_Rows_Success"
+            },
+            "name" : "Task_Tgt_Rows_Success",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Src_Rows_Failed"
+            },
+            "name" : "Task_Src_Rows_Failed",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Tgt_Rows_Failed"
+            },
+            "name" : "Task_Tgt_Rows_Failed",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Status"
+            },
+            "name" : "Task_Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Error_Message"
+            },
+            "name" : "Task_Error_Message",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 400,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Agent_Name"
+            },
+            "name" : "Task_Agent_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Log_Location"
+            },
+            "name" : "Task_Log_Location",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Retry_Iteration"
+            },
+            "name" : "Task_Retry_Iteration",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@0MUy662xn9rloMMBKO38ma",
+          "connectionName" : "richard_SQL",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "TASK_LOGS",
+            "label" : "TASK_LOGS",
+            "objectName" : "TASK_LOGS",
+            "path" : "TASK_LOGS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Task_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Log_ID",
+                "nativeName" : "Task_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_ID",
+                "nativeName" : "Job_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Log_ID",
+                "nativeName" : "Job_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Name",
+                "nativeName" : "Job_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Mapping_Task_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mapping_Task_Name",
+                "nativeName" : "Mapping_Task_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Start",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Start",
+                "nativeName" : "Task_Start",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_End",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_End",
+                "nativeName" : "Task_End",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Src_Rows_Success",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Src_Rows_Success",
+                "nativeName" : "Task_Src_Rows_Success",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Tgt_Rows_Success",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Tgt_Rows_Success",
+                "nativeName" : "Task_Tgt_Rows_Success",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Src_Rows_Failed",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Src_Rows_Failed",
+                "nativeName" : "Task_Src_Rows_Failed",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Tgt_Rows_Failed",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Tgt_Rows_Failed",
+                "nativeName" : "Task_Tgt_Rows_Failed",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Status",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Status",
+                "nativeName" : "Task_Status",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Error_Message",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Error_Message",
+                "nativeName" : "Task_Error_Message",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 400,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Agent_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Agent_Name",
+                "nativeName" : "Task_Agent_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Log_Location",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Log_Location",
+                "nativeName" : "Task_Log_Location",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Retry_Iteration",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Retry_Iteration",
+                "nativeName" : "Task_Retry_Iteration",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "Job_Name",
+              "toField" : {
+                "name" : "Job_Name"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "Mapping_Task_Name",
+              "toField" : {
+                "name" : "Mapping_Task_Name"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "Job_ID",
+              "toField" : {
+                "name" : "Job_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_Task_Start",
+              "toField" : {
+                "name" : "Task_Start"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_Task_Status",
+              "toField" : {
+                "name" : "Task_Status"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_Task_Retry_Iteration",
+              "toField" : {
+                "name" : "Task_Retry_Iteration"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "o_Job_Log_ID",
+              "toField" : {
+                "name" : "Job_Log_ID"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2022-04-14T11:44:24.411Z",
+        "name" : "exp_Set_Values",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "o_Task_Start",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SYSDATE"
+          },
+          {
+            "name" : "o_Task_Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "'Running'"
+          },
+          {
+            "name" : "o_Job_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : ":LKP.lkp_Parent_Job_Log_ID(Parent_Job_ID, 'Running')"
+          },
+          {
+            "name" : "v_Last_Task_Retry_Iteration",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : ":LKP.lkp_Failed_Tasks(:LKP.lkp_Parent_Job_Log_ID(Parent_Job_ID,'Running'),Job_ID,'Failed')"
+          },
+          {
+            "name" : "o_Task_Retry_Iteration",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "IIF(ISNULL(v_Last_Task_Retry_Iteration),0,v_Last_Task_Retry_Iteration + 1)"
+          },
+          {
+            "name" : "o_IS_COMPLETED",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "NOT (ISNULL(:LKP.lkp_Completed_Tasks(:LKP.lkp_Parent_Job_Log_ID(Parent_Job_ID, 'Running') , $p_Job_ID$,'Completed') ) and \nISNULL(:LKP.lkp_Completed_Tasks(:LKP.lkp_Parent_Job_Log_ID(Parent_Job_ID, 'Running') , $p_Job_ID$,'Completed with Errors') ))"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "description" : "Gets the Parent Job Log ID from the Job_Logs table using the Parent Job ID",
+        "createTime" : "2022-04-01T13:09:51.703Z",
+        "name" : "lkp_Parent_Job_Log_ID",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "multipleMatchPolicy" : "Use Last Value",
+        "returnPortName" : "Job_Log_ID",
+        "unconnected" : "true",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Job_Log_ID"
+            },
+            "name" : "Job_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Name"
+            },
+            "name" : "Job_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_ID"
+            },
+            "name" : "Job_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Parent_Job_Log_ID"
+            },
+            "name" : "Parent_Job_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Parent_Job_Name"
+            },
+            "name" : "Parent_Job_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Start"
+            },
+            "name" : "Job_Start",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_End"
+            },
+            "name" : "Job_End",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Status"
+            },
+            "name" : "Job_Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : [
+          "in_Parent_Job_ID",
+          "in_Status"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "Job_ID",
+            "operator" : "=",
+            "rightOperand" : "in_Parent_Job_ID"
+          },
+          {
+            "leftOperand" : "Job_Status",
+            "operator" : "=",
+            "rightOperand" : "in_Status"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@0MUy662xn9rloMMBKO38ma",
+          "connectionName" : "richard_SQL",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "JOB_LOGS",
+            "label" : "JOB_LOGS",
+            "objectName" : "JOB_LOGS",
+            "path" : "JOB_LOGS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Job_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Log_ID",
+                "nativeName" : "Job_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Name",
+                "nativeName" : "Job_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_ID",
+                "nativeName" : "Job_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Parent_Job_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent_Job_Log_ID",
+                "nativeName" : "Parent_Job_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Parent_Job_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent_Job_Name",
+                "nativeName" : "Parent_Job_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Start",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Start",
+                "nativeName" : "Job_Start",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_End",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_End",
+                "nativeName" : "Job_End",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Status",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Status",
+                "nativeName" : "Job_Status",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "JOB_LOGS"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Find if there are any failures in the Job logs to determine the next retry iteration number",
+        "createTime" : "2022-04-01T13:09:51.703Z",
+        "name" : "lkp_Failed_Tasks",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "multipleMatchPolicy" : "Use Last Value",
+        "returnPortName" : "Task_Retry_Iteration",
+        "unconnected" : "true",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Task_Log_ID"
+            },
+            "name" : "Task_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_ID"
+            },
+            "name" : "Job_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Log_ID"
+            },
+            "name" : "Job_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Name"
+            },
+            "name" : "Job_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Mapping_Task_Name"
+            },
+            "name" : "Mapping_Task_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Start"
+            },
+            "name" : "Task_Start",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_End"
+            },
+            "name" : "Task_End",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Src_Rows_Success"
+            },
+            "name" : "Task_Src_Rows_Success",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Tgt_Rows_Success"
+            },
+            "name" : "Task_Tgt_Rows_Success",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Src_Rows_Failed"
+            },
+            "name" : "Task_Src_Rows_Failed",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Tgt_Rows_Failed"
+            },
+            "name" : "Task_Tgt_Rows_Failed",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Status"
+            },
+            "name" : "Task_Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Error_Message"
+            },
+            "name" : "Task_Error_Message",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 400,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Agent_Name"
+            },
+            "name" : "Task_Agent_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Log_Location"
+            },
+            "name" : "Task_Log_Location",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Retry_Iteration"
+            },
+            "name" : "Task_Retry_Iteration",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : [
+          "in_Job_Log_ID",
+          "in_Job_ID",
+          "in_Status"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "Job_Log_ID",
+            "operator" : "=",
+            "rightOperand" : "in_Job_Log_ID"
+          },
+          {
+            "leftOperand" : "Job_ID",
+            "operator" : "=",
+            "rightOperand" : "in_Job_ID"
+          },
+          {
+            "leftOperand" : "Task_Status",
+            "operator" : "=",
+            "rightOperand" : "in_Status"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@0MUy662xn9rloMMBKO38ma",
+          "connectionName" : "richard_SQL",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "TASK_LOGS",
+            "label" : "TASK_LOGS",
+            "objectName" : "TASK_LOGS",
+            "path" : "TASK_LOGS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Task_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Log_ID",
+                "nativeName" : "Task_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_ID",
+                "nativeName" : "Job_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Log_ID",
+                "nativeName" : "Job_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Name",
+                "nativeName" : "Job_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Mapping_Task_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mapping_Task_Name",
+                "nativeName" : "Mapping_Task_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Start",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Start",
+                "nativeName" : "Task_Start",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_End",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_End",
+                "nativeName" : "Task_End",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Src_Rows_Success",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Src_Rows_Success",
+                "nativeName" : "Task_Src_Rows_Success",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Tgt_Rows_Success",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Tgt_Rows_Success",
+                "nativeName" : "Task_Tgt_Rows_Success",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Src_Rows_Failed",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Src_Rows_Failed",
+                "nativeName" : "Task_Src_Rows_Failed",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Tgt_Rows_Failed",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Tgt_Rows_Failed",
+                "nativeName" : "Task_Tgt_Rows_Failed",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Status",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Status",
+                "nativeName" : "Task_Status",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Error_Message",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Error_Message",
+                "nativeName" : "Task_Error_Message",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 400,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Agent_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Agent_Name",
+                "nativeName" : "Task_Agent_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Log_Location",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Log_Location",
+                "nativeName" : "Task_Log_Location",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Retry_Iteration",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Retry_Iteration",
+                "nativeName" : "Task_Retry_Iteration",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "description" : "Find if there are any completed tasks in the Job logs. if there are we can skip the run of this task by not writing out a record to the task logs - the CTF taskflow will skip to the end if no records are written to the TASK_LOGS table",
+        "createTime" : "2022-04-01T13:09:51.703Z",
+        "name" : "lkp_Completed_Tasks",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "multipleMatchPolicy" : "Use Last Value",
+        "returnPortName" : "Task_Log_ID",
+        "unconnected" : "true",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Task_Log_ID"
+            },
+            "name" : "Task_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_ID"
+            },
+            "name" : "Job_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Log_ID"
+            },
+            "name" : "Job_Log_ID",
+            "platformType" : {
+              "name" : "bigint"
+            },
+            "precision" : 19,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Name"
+            },
+            "name" : "Job_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Mapping_Task_Name"
+            },
+            "name" : "Mapping_Task_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Start"
+            },
+            "name" : "Task_Start",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_End"
+            },
+            "name" : "Task_End",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Src_Rows_Success"
+            },
+            "name" : "Task_Src_Rows_Success",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Tgt_Rows_Success"
+            },
+            "name" : "Task_Tgt_Rows_Success",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Src_Rows_Failed"
+            },
+            "name" : "Task_Src_Rows_Failed",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Tgt_Rows_Failed"
+            },
+            "name" : "Task_Tgt_Rows_Failed",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Status"
+            },
+            "name" : "Task_Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Error_Message"
+            },
+            "name" : "Task_Error_Message",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 400,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Agent_Name"
+            },
+            "name" : "Task_Agent_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Log_Location"
+            },
+            "name" : "Task_Log_Location",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Task_Retry_Iteration"
+            },
+            "name" : "Task_Retry_Iteration",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : [
+          "in_Job_Log_ID",
+          "in_Job_ID",
+          "in_Status"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "Job_Log_ID",
+            "operator" : "=",
+            "rightOperand" : "in_Job_Log_ID"
+          },
+          {
+            "leftOperand" : "Job_ID",
+            "operator" : "=",
+            "rightOperand" : "in_Job_ID"
+          },
+          {
+            "leftOperand" : "Task_Status",
+            "operator" : "=",
+            "rightOperand" : "in_Status"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@0MUy662xn9rloMMBKO38ma",
+          "connectionName" : "richard_SQL",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "TASK_LOGS",
+            "label" : "TASK_LOGS",
+            "objectName" : "TASK_LOGS",
+            "path" : "TASK_LOGS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Task_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Log_ID",
+                "nativeName" : "Task_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_ID",
+                "nativeName" : "Job_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Log_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Log_ID",
+                "nativeName" : "Job_Log_ID",
+                "nativeType" : "bigint",
+                "original" : "false",
+                "precision" : 19,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job_Name",
+                "nativeName" : "Job_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Mapping_Task_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mapping_Task_Name",
+                "nativeName" : "Mapping_Task_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Start",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Start",
+                "nativeName" : "Task_Start",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_End",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_End",
+                "nativeName" : "Task_End",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Src_Rows_Success",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Src_Rows_Success",
+                "nativeName" : "Task_Src_Rows_Success",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Tgt_Rows_Success",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Tgt_Rows_Success",
+                "nativeName" : "Task_Tgt_Rows_Success",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Src_Rows_Failed",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Src_Rows_Failed",
+                "nativeName" : "Task_Src_Rows_Failed",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Tgt_Rows_Failed",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Tgt_Rows_Failed",
+                "nativeName" : "Task_Tgt_Rows_Failed",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Status",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Status",
+                "nativeName" : "Task_Status",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Error_Message",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Error_Message",
+                "nativeName" : "Task_Error_Message",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 400,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Agent_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Agent_Name",
+                "nativeName" : "Task_Agent_Name",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Log_Location",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Log_Location",
+                "nativeName" : "Task_Log_Location",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 200,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              },
+              {
+                "name" : "Task_Retry_Iteration",
+                "fieldType" : "CONNECTOR",
+                "label" : "Task_Retry_Iteration",
+                "nativeName" : "Task_Retry_Iteration",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "TASK_LOGS"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2022-05-04T08:53:02.338Z",
+        "name" : "Filter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "advancedFilterCondition" : "NOT o_IS_COMPLETED"
+      }
+    ]
+  },
+  "vcsExportTime" : "2026-01-27 05:29:57 PST"
+}
